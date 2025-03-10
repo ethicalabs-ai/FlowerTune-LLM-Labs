@@ -6,9 +6,9 @@ FlowerTune LLM Labs is a collection of cookiecutter templates designed to help d
 
 This project provides ready-to-use Terraform modules, startup scripts, and example configurations to simplify running LLM fine-tuning in a federated learning setting.
 
-With CUDO Compute, individual developers can leverage high-performance NVIDIA GPUs for AI workloads without requiring access to large-scale corporate infrastructure.
+With CUDO Compute, individual developers can leverage high-performance NVIDIA GPUs for AI workloads without requiring access to large-scale infrastructure.
 
-By combining DevOps best practices such as infrastructure as code (IaC) with Flower's federated learning framework, we enable scalable and reproducible AI research.
+By combining DevOps best practices such as infrastructure as code (IaC) with Flower's federated learning framework, we enable scalable and reproducible AI/ML research.
 
 ## Features
 
@@ -55,7 +55,6 @@ This repository includes Terraform configurations to deploy required resources o
 
 📌 For detailed setup instructions, see `terraform/README.md`.
 
-
 ## Next Steps: Containerizing Your Experiment
 
 This project is part of an ongoing series on democratizing AI compute. In the next phase, we will introduce Docker-based deployment, allowing us to:
@@ -70,6 +69,4 @@ Stay tuned for the next guide on containerizing federated LLM fine-tuning with D
 
 This project is open-source and community-driven. If you’d like to support further experiments and research, consider contributing via Open Collective:
 
-👉 Support the [FlowerTune LLM Labs](https://opencollective.com/ethicalabs-ai/projects/flowertune-llm-lab)
-
-Let’s redefine AI innovation together! 🚀
+👉 Support the [FlowerTune LLM Labs](https://opencollective.com/ethicalabs-ai/projects/flowertune-llm-lab) 🚀
