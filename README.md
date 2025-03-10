@@ -10,7 +10,7 @@ With CUDO Compute, individual developers can leverage high-performance NVIDIA GP
 
 By combining DevOps best practices such as infrastructure as code (IaC) with Flower's federated learning framework, we enable scalable and reproducible AI research.
 
-## Features
+## Features
 
 - Cookiecutter-based project templates for easy experiment setup.
 - Terraform modules for provisioning CUDO Compute resources.
