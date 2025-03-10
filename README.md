@@ -49,7 +49,7 @@ FlowerTune-LLM-Labs git:(main) ✗ cookiecutter FlowerTune-LLM-Coding/
 
 This command will create a fully structured project with all necessary configurations for running federated fine-tuning experiments.
 
-## Deploying Infrastructure on Cudo Compute
+## Deploying Infrastructure on CUDO Compute
 
 This repository includes Terraform configurations to deploy required resources on CUDO Compute.
 
