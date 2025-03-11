@@ -50,14 +50,14 @@ export TF_VAR_cudo_project_id="your-cudo-project-id"
    Preview the resources that will be created by running:
 
    ```bash
-   terraform plan
+   terraform plan -out plan.out
    ```
 
 4. **Apply the Configuration**:
    Apply the Terraform configuration to provision the infrastructure:
 
    ```bash
-   terraform apply
+   terraform apply plan.out
    ```
 
 5. **Check the Output**:

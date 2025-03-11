@@ -14,14 +14,14 @@ module "llm_experiment" {
   vm_id              = "flowertune-vm"
   cudo_api_key       = var.cudo_api_key
   cudo_project_id    = var.cudo_project_id
-  datacenter_id      = "se-smedjebacken-1"
-  machine_type       = "epyc-milan-rtx-a4000"
-  gpu_model          = "RTX A4000"
+  datacenter_id      = "ca-montreal-3"
+  machine_type       = "ice-lake-rtx-a5000"
+  gpu_model          = "RTX A5000"
   memory_gib         = 16
   vcpus              = 4
   gpus               = 1
   boot_disk_image_id = "ubuntu-2204-nvidia-535-docker-v20241017"
-  boot_disk_size_gib = 70
+  boot_disk_size_gib = 100
   ssh_key_source     = "user"
 }
 
