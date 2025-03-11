@@ -45,7 +45,6 @@ cookiecutter ../templates/FlowerTune-LLM-Coding
 
 ```
 ➜  FlowerTune-LLM-Labs git:(main) cd workspace
-➜  workspace git:(main) ✗ ls
 ➜  workspace git:(main) ✗ cookiecutter ../templates/FlowerTune-LLM-Coding
 
   [1/27] directory_name (Coding-LLM): Qwen2.5-Coder

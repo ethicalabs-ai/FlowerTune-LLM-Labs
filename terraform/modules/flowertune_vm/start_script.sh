@@ -57,8 +57,6 @@ apt-get update -y
 apt-get install -y cuda-toolkit-12-6
 rm -f cuda-repo-ubuntu2204-12-6-local_12.6.0-560.28.03-1_amd64.deb
 
-# Verify CUDA installation
-nvcc --version && echo "CUDA 12.6 installed successfully."
 exit 0
 EOF
 
