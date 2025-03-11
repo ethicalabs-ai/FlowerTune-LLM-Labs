@@ -2,13 +2,13 @@
 
 ## Overview
 
-This folder contains a Terraform configuration to set up infrastructure for FlowerTune on [CUDO Compute](https://www.cudocompute.com/?via=flowertune-llm).
+This folder contains a Terraform configuration to set up infrastructure for FlowerTune LLM on [CUDO Compute](https://www.cudocompute.com/?via=flowertune-llm).
 
 The configurations will deploy the required resources for your FlowerTune experiments.
 
 ### Folder Structure
 
-- `infra_example`: Example folder containing infrastructure setup for FlowerTune.
+- `single_node_infra`: Example folder containing infrastructure setup for FlowerTune LLM on a single node.
 - `modules`: Contains the main module for infrastructure components.
 
 ## Setup Instructions
@@ -33,10 +33,10 @@ export TF_VAR_cudo_project_id="your-cudo-project-id"
 ### Steps to Deploy
 
 1. **Navigate to the Infrastructure Directory**:
-   Change to the `infra_example` directory:
+   Change to the `single_node_infra` directory:
 
    ```bash
-   cd infra_example
+   cd single_node_infra
    ```
 
 2. **Initialize Terraform**:
