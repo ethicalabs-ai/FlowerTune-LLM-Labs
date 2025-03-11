@@ -4,9 +4,9 @@ build-backend = "hatchling.build"
 
 [project]
 name = "{{ cookiecutter.project_slug }}"
-version = "1.0.0"
-description = ""
-license = "Apache-2.0"
+version = "{{ cookiecutter.version }}"
+description = "{{ cookiecutter.project_short_description }}"
+license = "{{ cookiecutter.license }}"
 dependencies = [
     "flwr[simulation]>=1.13.1",
     "flwr-datasets>=0.3.0",

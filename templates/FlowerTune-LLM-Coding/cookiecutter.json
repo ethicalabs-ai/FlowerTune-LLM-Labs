@@ -1,6 +1,7 @@
 {
     "directory_name": "Coding-LLM",
     "project_name": "FlowerTune-LLM-Coding",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
     "project_short_description": "FlowerTune LLM Labs - Coding Template",
     "full_name": "Individual Contributor",
     "email": "hello@flower.ai",
@@ -24,6 +25,6 @@
     "num_cpus": "4",
     "num_gpus": "1.0",
     "gpu_spec": "NVIDIA RTX A4000",
-    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "license": ["MIT", "Apache-2.0"]
 }
