@@ -37,14 +37,15 @@ You can use Cookiecutter to generate a new project structure for a federated Flo
 ```
 pip install -r requirements.txt
 
-cookiecutter FlowerTune-LLM-Coding/
+cd workspace
+cookiecutter ../templates/FlowerTune-LLM-Coding
 ```
 
 Example Run:
 
 ```
 ✗ cd workspace
-✗ cookiecutter templates/FlowerTune-LLM-Coding
+✗ cookiecutter ../templates/FlowerTune-LLM-Coding
   [1/24] directory_name (Coding-LLM):
   [2/24] accumulation_steps (1):
   [3/24] base_model (Qwen/Qwen2.5-Coder-0.5B-Instruct):
