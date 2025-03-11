@@ -43,7 +43,8 @@ cookiecutter FlowerTune-LLM-Coding/
 Example Run:
 
 ```
-FlowerTune-LLM-Labs git:(main) ✗ cookiecutter FlowerTune-LLM-Coding/
+✗ cd workspace
+✗ cookiecutter templates/FlowerTune-LLM-Coding
   [1/24] directory_name (Coding-LLM):
   [2/24] accumulation_steps (1):
   [3/24] base_model (Qwen/Qwen2.5-Coder-0.5B-Instruct):
