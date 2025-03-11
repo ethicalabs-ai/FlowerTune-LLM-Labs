@@ -48,31 +48,33 @@ cookiecutter ../templates/FlowerTune-LLM-Coding
 ➜  workspace git:(main) ✗ ls
 ➜  workspace git:(main) ✗ cookiecutter ../templates/FlowerTune-LLM-Coding
 
-  [1/25] directory_name (Coding-LLM):
-  [2/25] project_name (FlowerTune-LLM-Coding):
-  [3/25] project_short_description (FlowerTune LLM Labs - Coding Template):
-  [4/25] full_name (Individual Contributor):
-  [5/25] email (hello@flower.ai):
-  [6/25] flower_username (flower):
-  [7/25] base_model (Qwen/Qwen2.5-Coder-0.5B-Instruct):
-  [8/25] quantization (4):
-  [9/25] bf16 (true):
-  [10/25] tf32 (true):
-  [11/25] peft_lora_alpha (64):
-  [12/25] peft_lora_r (32):
-  [13/25] peft_use_dora (true):
-  [14/25] per_device_train_batch_size (8):
-  [15/25] max_steps (10):
-  [16/25] accumulation_steps (1):
-  [17/25] max_lr (5e-5):
-  [18/25] min_lr (5e-6):
-  [19/25] optimizer (paged_adamw_8bit):
-  [20/25] lr_scheduler_type (constant):
-  [21/25] fraction_fit (0.2):
-  [22/25] num_server_rounds (100):
-  [23/25] gpu_spec (NVIDIA RTX A4000):
-  [24/25] project_slug (flowertune_llm_coding):
-  [25/25] version (1.0.0):
+  [1/27] directory_name (Coding-LLM): Qwen2.5-Coder
+  [2/27] project_name (FlowerTune-LLM-Coding):
+  [3/27] project_short_description (FlowerTune LLM Labs - Coding Template):
+  [4/27] full_name (Individual Contributor):
+  [5/27] email (hello@flower.ai):
+  [6/27] flower_username (flower):
+  [7/27] base_model (Qwen/Qwen2.5-Coder-0.5B-Instruct):
+  [8/27] quantization (4):
+  [9/27] bf16 (true):
+  [10/27] tf32 (true):
+  [11/27] peft_lora_alpha (64):
+  [12/27] peft_lora_r (32):
+  [13/27] peft_use_dora (true):
+  [14/27] per_device_train_batch_size (8):
+  [15/27] max_steps (10):
+  [16/27] accumulation_steps (1):
+  [17/27] max_lr (5e-5):
+  [18/27] min_lr (5e-6):
+  [19/27] optimizer (paged_adamw_8bit):
+  [20/27] lr_scheduler_type (constant):
+  [21/27] fraction_fit (0.2):
+  [22/27] num_server_rounds (100):
+  [23/27] num_cpus (4):
+  [24/27] num_gpus (1.0):
+  [25/27] gpu_spec (NVIDIA RTX A4000):
+  [26/27] project_slug (flowertune_llm_coding):
+  [27/27] version (1.0.0):
 ```
 
 This command will create a fully structured project with all necessary configurations for running federated fine-tuning experiments.
