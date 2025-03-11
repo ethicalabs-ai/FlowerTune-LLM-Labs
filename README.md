@@ -22,8 +22,8 @@ By combining DevOps best practices such as infrastructure as code (IaC) with Flo
 1. Clone the Repository
 
 ```
-git clone https://github.com/ethicalabs-ai/flowertune-llm-labs.git
-cd flowertune-llm-labs
+git clone git@github.com:ethicalabs-ai/FlowerTune-LLM-Labs.git
+cd FlowerTune-LLM-Labs
 ```
 
 2. Initialize a New Experiment Using Cookiecutter
