@@ -41,6 +41,12 @@ apt install -y build-essential libssl-dev zlib1g-dev libbz2-dev \
     tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev \
     python-is-python3 python3-pip pipx g++
 
+# Install CUDA 12.6 - Script
+cat << 'EOF' > /home/flower/install-cuda-toolkit-12-6.sh
+#!/bin/bash
+
+set -e  # Exit on error
+
 # Install CUDA 12.6
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
 mv cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600
@@ -50,6 +56,14 @@ cp /var/cuda-repo-ubuntu2204-12-6-local/cuda-*-keyring.gpg /usr/share/keyrings/
 apt-get update -y
 apt-get install -y cuda-toolkit-12-6
 rm -f cuda-repo-ubuntu2204-12-6-local_12.6.0-560.28.03-1_amd64.deb
+
+# Verify CUDA installation
+nvcc --version && echo "CUDA 12.6 installed successfully."
+exit 0
+EOF
+
+chmod +x /home/flower/install-cuda-toolkit-12-6.sh
+chown flower:flower /home/flower/install-cuda-toolkit-12-6.sh
 
 # Upgrade pip, wheel, setuptools
 python -m pip install --upgrade pip wheel setuptools packaging
