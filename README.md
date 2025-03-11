@@ -4,9 +4,9 @@
 
 FlowerTune LLM Labs is a collection of cookiecutter templates designed to help developers set up federated fine-tuning experiments using [Flower](https://flower.ai/) and [CUDO Compute](https://www.cudocompute.com/?via=flowertune-llm).
 
-This project provides ready-to-use Terraform modules, startup scripts, and example configurations to simplify running LLM fine-tuning in a federated learning setting.
+This project provides ready-to-use [Terraform](https://www.terraform.io/) modules, startup scripts, and example configurations to simplify running LLM fine-tuning in a federated learning setting.
 
-With CUDO Compute, individual developers can leverage high-performance NVIDIA GPUs for AI workloads without requiring access to large-scale infrastructure.
+With [CUDO Compute](https://www.cudocompute.com/?via=flowertune-llm), individual developers can leverage high-performance NVIDIA GPUs for AI workloads without requiring access to large-scale infrastructure.
 
 By combining DevOps best practices such as infrastructure as code (IaC) with Flower's federated learning framework, we enable scalable and reproducible AI/ML research.
 
@@ -16,21 +16,21 @@ For more details about the FlowerTune LLM initiative, pleasse visit [FlowerTune 
 
 ## Features
 
-- Cookiecutter-based project templates for easy experiment setup.
+- [Cookiecutter](https://cookiecutter.readthedocs.io)-based project templates for easy experiment setup.
 - Terraform modules for provisioning CUDO Compute resources.
 - Automated startup script to install system dependencies.
 - Preconfigured Flower simulation engine for federated LLM fine-tuning.
 
 ## Getting Started
 
-1. Clone the Repository
+### Clone the Repository
 
 ```
 git clone git@github.com:ethicalabs-ai/FlowerTune-LLM-Labs.git
 cd FlowerTune-LLM-Labs
 ```
 
-2. Initialize a New Experiment Using Cookiecutter
+### Initialize a New Experiment Using Cookiecutter
 
 You can use Cookiecutter to generate a new project structure for a federated FlowerTune experiment:
 
@@ -41,7 +41,7 @@ cd workspace
 cookiecutter ../templates/FlowerTune-LLM-Coding
 ```
 
-Example Run:
+### Example Run
 
 ```
 ✗ cd workspace
@@ -57,7 +57,7 @@ This command will create a fully structured project with all necessary configura
 
 ## Deploying Infrastructure on CUDO Compute
 
-This repository includes Terraform configurations to deploy required resources on CUDO Compute.
+This repository includes Terraform configurations to deploy required resources on [CUDO Compute](https://www.cudocompute.com/?via=flowertune-llm).
 
 📌 For detailed setup instructions, see [terraform/README.md](./terraform/README.md).
 
