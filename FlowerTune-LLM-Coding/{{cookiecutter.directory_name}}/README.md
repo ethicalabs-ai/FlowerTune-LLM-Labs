@@ -10,7 +10,7 @@ which allows users to perform the training on a single GPU.
 
 ## Methodology
 
-This baseline performs federated LLM fine-tuning with [DoRA](https://arxiv.org/abs/2402.09353) using the [🤗PEFT](https://huggingface.co/docs/peft/en/index) library.
+This baseline performs federated LLM fine-tuning with {% if cookiecutter.peft_use_dora is sameas "true" %}[DoRA](https://arxiv.org/abs/2402.09353){% else %}[LoRA](https://arxiv.org/abs/2106.09685){% endif %} using the [🤗PEFT](https://huggingface.co/docs/peft/en/index) library.
 The clients' models are aggregated with `FedAvg` strategy.
 This provides a baseline performance for the leaderboard of Code challenge.
 
@@ -21,7 +21,7 @@ For the **{{ cookiecutter.base_model }}** model I adopted the following fine-tun
 - **Precision**: `{% if cookiecutter.bf16 is sameas "true" %}bf16{% else %}fp16{% endif %}` for model weights.
 - **Quantization**: `{{ cookiecutter.quantization }}-bit` quantization for reduced memory usage.
 - **Optimizer**: `{{ cookiecutter.optimizer }}`
-- **[DoRA](https://arxiv.org/abs/2402.09353) Configuration**:
+- **{% if cookiecutter.peft_use_dora is sameas "true" %}[DoRA](https://arxiv.org/abs/2402.09353){% else %}[LoRA](https://arxiv.org/abs/2106.09685){% endif %} Configuration**:
   - Rank (r): `{{ cookiecutter.peft_lora_r }}`
   - Alpha: `{{ cookiecutter.peft_lora_alpha }}`
   - Target Modules:
@@ -88,7 +88,9 @@ flwr run
 
 ## Running the evaluation
 
-TODO
+To evaluate the fine-tuned LLM adapter, please check the following link:
+
+-  [Evaluation for Code challenge](https://github.com/adap/flower/tree/main/benchmarks/flowertune-llm/evaluation/code)
 
 ## Model saving
 

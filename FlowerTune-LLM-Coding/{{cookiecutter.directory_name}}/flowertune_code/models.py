@@ -62,7 +62,7 @@ def get_model(model_cfg: DictConfig):
             "o_proj",
             "qkv_proj",
         ],
-        use_dora=True,
+        use_dora=model_cfg.lora.peft_use_dora,
     )
 
     if model_cfg.gradient_checkpointing:

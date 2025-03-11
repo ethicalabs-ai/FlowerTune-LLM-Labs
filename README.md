@@ -10,6 +10,10 @@ With CUDO Compute, individual developers can leverage high-performance NVIDIA GP
 
 By combining DevOps best practices such as infrastructure as code (IaC) with Flower's federated learning framework, we enable scalable and reproducible AI/ML research.
 
+---
+
+For more details about the FlowerTune LLM initiative, pleasse visit [FlowerTune LLM Leaderboard](https://flower.ai/benchmarks/llm-leaderboard/) 🚀
+
 ## Features
 
 - Cookiecutter-based project templates for easy experiment setup.
@@ -53,14 +57,14 @@ This command will create a fully structured project with all necessary configura
 
 This repository includes Terraform configurations to deploy required resources on CUDO Compute.
 
-📌 For detailed setup instructions, see `terraform/README.md`.
+📌 For detailed setup instructions, see [terraform/README.md](./terraform/README.md).
 
 ## Next Steps: Containerizing Your Experiment
 
 This project is part of an ongoing series on democratizing AI compute. In the next phase, we will introduce Docker-based deployment, allowing us to:
 
-- ✅ Avoid installing dependencies manually via startup scripts.
-- ✅ Use containerized environments for cleaner deployments.
+- ✅ Avoid installing dependencies manually.
+- ✅ Use containerized environments for cleaner deployments (Docker, Kubernetes).
 - ✅ Move toward best practices in DevOps and MLOps.
 
 Stay tuned for the next guide on containerizing federated LLM fine-tuning with Docker!

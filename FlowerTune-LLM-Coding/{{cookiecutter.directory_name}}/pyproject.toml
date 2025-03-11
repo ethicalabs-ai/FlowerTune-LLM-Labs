@@ -37,6 +37,7 @@ model.quantization = {{ cookiecutter.quantization }}
 model.gradient-checkpointing = true
 model.lora.peft-lora-r = {{ cookiecutter.peft_lora_r }}
 model.lora.peft-lora-alpha = {{ cookiecutter.peft_lora_alpha }}
+model.lora.peft-use-dora = {{ cookiecutter.peft_use_dora }}
 train.save-every-round = 5
 train.learning-rate-max = {{ cookiecutter.max_lr }}
 train.learning-rate-min = {{ cookiecutter.min_lr }}
