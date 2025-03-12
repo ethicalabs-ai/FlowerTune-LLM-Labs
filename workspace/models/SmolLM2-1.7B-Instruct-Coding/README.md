@@ -1,6 +1,6 @@
 # FlowerTune LLM Labs - Coding Template
 
-This directory conducts federated instruction tuning with a pretrained [mistralai/Mistral-7B-Instruct-v0.3](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3) model on a [Code dataset](https://huggingface.co/datasets/flwrlabs/code-alpaca-20k).
+This directory conducts federated instruction tuning with a pretrained [HuggingFaceTB/SmolLM2-1.7B-Instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct) model on a [Code dataset](https://huggingface.co/datasets/flwrlabs/code-alpaca-20k).
 
 We use [Flower Datasets](https://flower.dev/docs/datasets/) to download, partition and preprocess the dataset.
 
@@ -14,9 +14,9 @@ This baseline performs federated LLM fine-tuning with [DoRA](https://arxiv.org/a
 The clients' models are aggregated with `FedAvg` strategy.
 This provides a baseline performance for the leaderboard of Code challenge.
 
-### mistralai/Mistral-7B-Instruct-v0.3
+### HuggingFaceTB/SmolLM2-1.7B-Instruct
 
-For the **mistralai/Mistral-7B-Instruct-v0.3** model I adopted the following fine-tuning methodology:
+For the **HuggingFaceTB/SmolLM2-1.7B-Instruct** model I adopted the following fine-tuning methodology:
 
 - **Precision**: `bf16` for model weights.
 - **Quantization**: `4-bit` quantization for reduced memory usage.
