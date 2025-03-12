@@ -12,7 +12,7 @@ By combining DevOps best practices such as infrastructure as code (IaC) with Flo
 
 ---
 
-For more details about the FlowerTune LLM initiative, pleasse visit [FlowerTune LLM Leaderboard](https://flower.ai/benchmarks/llm-leaderboard/) 🚀
+For more details about the FlowerTune LLM initiative, please visit [FlowerTune LLM Leaderboard](https://flower.ai/benchmarks/llm-leaderboard/) 🚀
 
 ## Features
 
