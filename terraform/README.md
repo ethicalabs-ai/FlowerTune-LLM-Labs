@@ -8,7 +8,7 @@ The configurations will deploy the required resources for your FlowerTune experi
 
 ### Folder Structure
 
-- `single_node_infra`: Example folder containing infrastructure setup for FlowerTune LLM on a single node.
+- `coding_infra`: Example folder containing infrastructure setup for FlowerTune LLM Coding.
 - `modules`: Contains the main module for infrastructure components.
 
 ## Setup Instructions
