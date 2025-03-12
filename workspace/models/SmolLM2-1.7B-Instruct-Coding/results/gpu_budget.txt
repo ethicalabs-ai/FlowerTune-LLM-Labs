@@ -3,6 +3,6 @@
 |  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
 |        ID   ID                                                             Usage      |
 |=======================================================================================|
-|    0   N/A  N/A     37464      C   ...ions/3.11.11/envs/flower/bin/python     1880MiB |
-|    0   N/A  N/A     37846      C   ray::ClientAppActor.run                   28540MiB |
+|    0   N/A  N/A     37464      C   ...ions/3.11.11/envs/flower/bin/python     2712MiB |
+|    0   N/A  N/A     37846      C   ray::ClientAppActor.run                   33084MiB |
 +---------------------------------------------------------------------------------------+
