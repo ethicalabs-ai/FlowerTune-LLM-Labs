@@ -2,7 +2,7 @@
     "directory_name": "Coding-LLM",
     "project_name": "FlowerTune-LLM-Coding",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
-    "project_short_description": "FlowerTune LLM Labs - Coding Template",
+    "project_short_description": "FlowerTune LLM Labs",
     "full_name": "Individual Contributor",
     "email": "hello@flower.ai",
     "flower_username": "flower",

@@ -15,7 +15,7 @@ dependencies = [
     "bitsandbytes==0.45.0",
     "scipy==1.13.0",
     "peft==0.14.0",
-    "transformers==4.48.0",
+    "transformers==4.49.0",
     "sentencepiece==0.2.0",
     "omegaconf==2.3.0",
     "hf_transfer==0.1.8",
@@ -32,10 +32,10 @@ serverapp = "flowertune_llm_coding.server_app:app"
 clientapp = "flowertune_llm_coding.client_app:app"
 
 [tool.flwr.app.config]
-model.name = "microsoft/phi-4"
+model.name = "microsoft/Phi-4-mini-instruct"
 model.quantization = 4
 model.gradient-checkpointing = true
-model.lora.peft-lora-r = 32
+model.lora.peft-lora-r = 16
 model.lora.peft-lora-alpha = 64
 model.lora.peft-use-dora = true
 train.save-every-round = 5
@@ -44,7 +44,7 @@ train.learning-rate-min = 5e-6
 train.seq-length = 512
 train.training-arguments.output-dir = ""
 train.training-arguments.learning-rate = ""
-train.training-arguments.per-device-train-batch-size = 8
+train.training-arguments.per-device-train-batch-size = 16
 train.training-arguments.gradient-accumulation-steps = 1
 train.training-arguments.logging-steps = 1
 train.training-arguments.num-train-epochs = 3

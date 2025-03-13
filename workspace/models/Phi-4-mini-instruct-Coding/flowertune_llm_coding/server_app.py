@@ -8,9 +8,9 @@ from flwr.common.config import unflatten_dict
 from flwr.server import ServerApp, ServerAppComponents, ServerConfig
 from omegaconf import DictConfig
 
-from flowertune_code.models import get_model, get_parameters, set_parameters
-from flowertune_code.dataset import replace_keys
-from flowertune_code.strategy import FlowerTuneLlm
+from .models import get_model, get_parameters, set_parameters
+from .dataset import replace_keys
+from .strategy import FlowerTuneLlm
 
 
 # Get function that will be executed by the strategy's evaluate() method

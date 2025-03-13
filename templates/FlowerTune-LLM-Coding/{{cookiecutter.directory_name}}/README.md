@@ -1,4 +1,4 @@
-# {{ cookiecutter.project_short_description }}
+# {{ cookiecutter.project_short_description }} - {{ cookiecutter.base_model }}
 
 This directory conducts federated instruction tuning with a pretrained [{{ cookiecutter.base_model }}](https://huggingface.co/{{ cookiecutter.base_model }}) model on a [Code dataset](https://huggingface.co/datasets/flwrlabs/code-alpaca-20k).
 
@@ -16,7 +16,7 @@ This provides a baseline performance for the leaderboard of Code challenge.
 
 ### {{ cookiecutter.base_model }}
 
-For the **{{ cookiecutter.base_model }}** model I adopted the following fine-tuning methodology:
+For the **{{ cookiecutter.base_model }}** model we adopted the following fine-tuning methodology:
 
 - **Precision**: `{% if cookiecutter.bf16 is sameas "true" %}bf16{% else %}fp16{% endif %}` for model weights.
 - **Quantization**: `{{ cookiecutter.quantization }}-bit` quantization for reduced memory usage.

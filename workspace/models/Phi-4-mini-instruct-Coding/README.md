@@ -1,6 +1,6 @@
-# FlowerTune LLM Labs - Coding Template
+# FlowerTune LLM Labs - microsoft/Phi-4-mini-instruct
 
-This directory conducts federated instruction tuning with a pretrained [microsoft/phi-4](https://huggingface.co/microsoft/phi-4) model on a [Code dataset](https://huggingface.co/datasets/flwrlabs/code-alpaca-20k).
+This directory conducts federated instruction tuning with a pretrained [microsoft/Phi-4-mini-instruct](https://huggingface.co/microsoft/Phi-4-mini-instruct) model on a [Code dataset](https://huggingface.co/datasets/flwrlabs/code-alpaca-20k).
 
 We use [Flower Datasets](https://flower.dev/docs/datasets/) to download, partition and preprocess the dataset.
 
@@ -14,15 +14,15 @@ This baseline performs federated LLM fine-tuning with [DoRA](https://arxiv.org/a
 The clients' models are aggregated with `FedAvg` strategy.
 This provides a baseline performance for the leaderboard of Code challenge.
 
-### microsoft/phi-4
+### microsoft/Phi-4-mini-instruct
 
-For the **microsoft/phi-4** model I adopted the following fine-tuning methodology:
+For the **microsoft/Phi-4-mini-instruct** model we adopted the following fine-tuning methodology:
 
 - **Precision**: `bf16` for model weights.
 - **Quantization**: `4-bit` quantization for reduced memory usage.
 - **Optimizer**: `paged_adamw_8bit`
 - **[DoRA](https://arxiv.org/abs/2402.09353) Configuration**:
-  - Rank (r): `32`
+  - Rank (r): `16`
   - Alpha: `64`
   - Target Modules:
     - `down_proj`,
@@ -30,7 +30,7 @@ For the **microsoft/phi-4** model I adopted the following fine-tuning methodolog
     - `o_proj`,
     - `qkv_proj`,
 - **Training Configuration**:
-  - Batch size: `8`
+  - Batch size: `16`
   - Maximum number of steps: `10`
   - Accumulation steps: `1`
   - Total number of rounds: `10`

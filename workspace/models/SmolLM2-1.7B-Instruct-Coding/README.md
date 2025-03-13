@@ -1,4 +1,4 @@
-# FlowerTune LLM Labs - Coding Template
+# FlowerTune LLM Labs - HuggingFaceTB/SmolLM2-1.7B-Instruct
 
 This directory conducts federated instruction tuning with a pretrained [HuggingFaceTB/SmolLM2-1.7B-Instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct) model on a [Code dataset](https://huggingface.co/datasets/flwrlabs/code-alpaca-20k).
 
@@ -16,7 +16,7 @@ This provides a baseline performance for the leaderboard of Code challenge.
 
 ### HuggingFaceTB/SmolLM2-1.7B-Instruct
 
-For the **HuggingFaceTB/SmolLM2-1.7B-Instruct** model I adopted the following fine-tuning methodology:
+For the **HuggingFaceTB/SmolLM2-1.7B-Instruct** model we adopted the following fine-tuning methodology:
 
 - **Precision**: `bf16` for model weights.
 - **Quantization**: `4-bit` quantization for reduced memory usage.
@@ -30,11 +30,11 @@ For the **HuggingFaceTB/SmolLM2-1.7B-Instruct** model I adopted the following fi
     - `o_proj`,
     - `qkv_proj`,
 - **Training Configuration**:
-  - Batch size: `8`
+  - Batch size: `32`
   - Maximum number of steps: `10`
   - Accumulation steps: `1`
-  - Total number of rounds: `10`
-  - Fraction fit per round: `0.2`
+  - Total number of rounds: `100`
+  - Fraction fit per round: `0.4`
 - **Learning Rate Scheduler**:
   - Cosine Annealing over rounds, where:
     - Maximum LR: `5e-6`
@@ -70,7 +70,7 @@ pip install flash-attn --no-build-isolation   # Install FlashAttention-2
 ## Experimental setup
 
 The dataset is divided into 10 partitions in an IID fashion, a partition is assigned to each ClientApp.
-We randomly sample a fraction (0.2) of the total nodes to participate in each round, for a total of `10` rounds.
+We randomly sample a fraction (0.4) of the total nodes to participate in each round, for a total of `100` rounds.
 All settings are defined in `pyproject.toml`.
 
 > [!IMPORTANT]
