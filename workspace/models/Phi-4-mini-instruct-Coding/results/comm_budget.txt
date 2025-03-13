@@ -1,0 +1,8 @@
+INFO :      aggregate_fit: received 2 results and 0 failures
+INFO :      Communication budget: used 3656.88 MB (+182.84 MB this round) / 200,000 MB
+Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:01<00:00,  1.13it/s]
+INFO :      fit progress: (10, 0.0, {}, 1011.8892230469974)
+INFO :      configure_evaluate: no clients selected, skipping evaluation
+INFO :
+INFO :      [SUMMARY]
+INFO :      Run finished 10 round(s) in 1011.89s
