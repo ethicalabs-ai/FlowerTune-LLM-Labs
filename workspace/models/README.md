@@ -1,6 +1,6 @@
-# FlowerTune LLM Leaderboard
+# FlowerTune-LLM-Labs - Fine-tuned LLMs
 
-These fine-tunes are sent to the [FlowerTune LLM Leaderboard](https://flower.ai/benchmarks/llm-leaderboard/), which evaluates large language models fine-tuned in federated learning environments.
+The following fine-tuned LLMs are sent to the [FlowerTune LLM Leaderboard](https://flower.ai/benchmarks/llm-leaderboard/), which evaluates large language models fine-tuned in federated learning environments.
 
 The goal is to evaluate LLMs on different domains of tasks, experiment with different fine-tuning techniques, and compare their performances across various domains.
 
