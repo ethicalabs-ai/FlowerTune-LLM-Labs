@@ -42,20 +42,6 @@ For the **microsoft/Phi-4-mini-instruct** model we adopted the following fine-tu
   - Constant learning rate scheduler over steps
 - **Strategy**: `FedAvg`
 
-### Evaluation Results (Pass@1 score)
-
-- **MBPP**:  n/a %
-- **HumanEval**: n/a %
-- **MultiPL-E (JS)**: n/a %
-- **MultiPL-E (C++)**: n/a %
-- **Average**: n/a %
-
-The evaluation was conducted on an NVIDIA A40.
-
-### Communication Budget
-
-n/a MB
-
 ## Environments setup
 
 Project dependencies are defined in `pyproject.toml`. Install them in an activated Python environment with:
