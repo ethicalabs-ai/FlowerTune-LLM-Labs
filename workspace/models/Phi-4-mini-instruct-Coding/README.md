@@ -42,6 +42,28 @@ For the **microsoft/Phi-4-mini-instruct** model we adopted the following fine-tu
   - Constant learning rate scheduler over steps
 - **Strategy**: `FedAvg`
 
+### Training Loss Visualization
+
+Below is the training loss plot from the experiment:
+
+![Training Loss](results/train_loss.png)
+
+### Evaluation Results (Pass@1 score)
+
+**PEFT Adapter**: [Flwr-Phi-4-mini-Instruct-Coding-PEFT](https://huggingface.co/ethicalabs/Flwr-Phi-4-mini-Instruct-Coding-PEFT)
+
+- **HumanEval**: 59.76 %
+- **MBPP**: 46.20 %
+- **MultiPL-E (C++)**:  37.27 %
+- **MultiPL-E (JS)**: 52.79 %
+- **Average**: 49.00 %
+
+The evaluation was conducted on an RTX A40 (48 GB).
+
+### Communication Budget
+
+3.66 GB
+
 ## Environments setup
 
 Project dependencies are defined in `pyproject.toml`. Install them in an activated Python environment with:
