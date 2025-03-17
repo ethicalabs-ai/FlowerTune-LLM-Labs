@@ -58,7 +58,7 @@ Below is the training loss plot from the experiment:
 - **MultiPL-E (JS)**: 52.79 %
 - **Average**: 49.00 %
 
-The evaluation was conducted on an RTX A40 (48 GB).
+The evaluation was conducted on an NVIDIA A40 (48 GB).
 
 ### Communication Budget
 
