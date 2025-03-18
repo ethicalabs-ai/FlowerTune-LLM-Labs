@@ -18,7 +18,7 @@ module "llm_experiment" {
   machine_type       = "ice-lake-a40-compute"
   gpu_model          = "A40 (compute mode)"
   memory_gib         = 32
-  vcpus              = 6
+  vcpus              = 8
   gpus               = 1
   boot_disk_image_id = "ubuntu-2204-nvidia-535-docker-v20241017"
   boot_disk_size_gib = 100
