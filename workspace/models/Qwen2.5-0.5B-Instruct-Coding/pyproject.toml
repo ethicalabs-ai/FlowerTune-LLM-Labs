@@ -1,0 +1,73 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "flowertune_llm_coding"
+version = "1.0.0"
+description = "FlowerTune LLM Labs"
+license = "Apache-2.0"
+dependencies = [
+    "flwr[simulation]>=1.13.1",
+    "flwr-datasets>=0.3.0",
+    "torch==2.5.1",
+    "trl==0.8.1",
+    "bitsandbytes==0.45.0",
+    "scipy==1.13.0",
+    "peft==0.14.0",
+    "transformers==4.49.0",
+    "sentencepiece==0.2.0",
+    "omegaconf==2.3.0",
+    "hf_transfer==0.1.8",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[tool.flwr.app]
+publisher = "mrs83"
+
+[tool.flwr.app.components]
+serverapp = "flowertune_llm_coding.server_app:app"
+clientapp = "flowertune_llm_coding.client_app:app"
+
+[tool.flwr.app.config]
+model.name = "Qwen/Qwen2.5-0.5B-Instruct"
+model.quantization = 4
+model.gradient-checkpointing = true
+model.lora.peft-lora-r = 16
+model.lora.peft-lora-alpha = 64
+model.lora.peft-use-dora = true
+train.save-every-round = 5
+train.learning-rate-max = 5e-5
+train.learning-rate-min = 5e-6
+train.seq-length = 512
+train.training-arguments.output-dir = ""
+train.training-arguments.learning-rate = ""
+train.training-arguments.per-device-train-batch-size = 16
+train.training-arguments.gradient-accumulation-steps = 1
+train.training-arguments.logging-steps = 1
+train.training-arguments.num-train-epochs = 3
+train.training-arguments.max-steps = 10
+train.training-arguments.save-steps = 1000
+train.training-arguments.save-total-limit = 10
+train.training-arguments.max-grad-norm = 1.0
+train.training-arguments.gradient-checkpointing = true
+train.training-arguments.bf16 = true
+train.training-arguments.tf32 = true
+train.training-arguments.optim = "paged_adamw_8bit"
+train.training-arguments.lr-scheduler-type = "constant"
+strategy.fraction-fit = 0.6
+strategy.fraction-evaluate = 0.0
+num-server-rounds = 30
+
+[tool.flwr.app.config.static]
+dataset.name = "flwrlabs/code-alpaca-20k"
+
+[tool.flwr.federations]
+default = "local-simulation"
+
+[tool.flwr.federations.local-simulation]
+options.num-supernodes = 10
+options.backend.client-resources.num-cpus = 4
+options.backend.client-resources.num-gpus = 1.0
