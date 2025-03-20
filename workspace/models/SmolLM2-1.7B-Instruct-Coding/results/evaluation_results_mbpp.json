@@ -1,6 +1,6 @@
 {
   "mbpp": {
-    "pass@1": 0.34
+    "pass@1": 0.35
   },
   "config": {
     "prefix": "",
@@ -13,14 +13,14 @@
     "seed": 0,
     "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
     "modeltype": "causal",
-    "peft_model": "../../SmolLM2-1.7B-Instruct-Coding/results/2025-03-12_21-12-44/peft_100/",
+    "peft_model": "ethicalabs/Flwr-SmolLM2-1.7B-Instruct-Coding-PEFT",
     "revision": null,
     "use_auth_token": true,
     "trust_remote_code": false,
     "tasks": "mbpp",
     "instruction_tokens": null,
     "batch_size": 4,
-    "max_length_generation": 1024,
+    "max_length_generation": 2048,
     "precision": "fp32",
     "load_in_8bit": false,
     "load_in_4bit": false,

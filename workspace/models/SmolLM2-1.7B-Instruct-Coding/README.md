@@ -52,17 +52,17 @@ Below is the training loss plot from the experiment:
 
 **PEFT Adapter**: [Flwr-SmolLM2-1.7B-Instruct-Coding-PEFT](https://huggingface.co//ethicalabs/Flwr-SmolLM2-1.7B-Instruct-Coding-PEFT)
 
-- **HumanEval**: 0.3048780487804878 %
-- **MBPP**: 0.34 %
-- **MultiPL-E (C++)**: 0.2360248447204969 %
-- **MultiPL-E (JS)**: 0.18633540372670807 %
-- **Average**:  %
+- **HumanEval**: 30.49 %
+- **MBPP**: 35.00 %
+- **MultiPL-E (C++)**: 23.60 %
+- **MultiPL-E (JS)**: 18.63 %
+- **Average**: 26.93 %
 
 The evaluation was conducted on an NVIDIA A40 (48 GB).
 
 ### Communication Budget
 
-17114.06 MB
+16.71 GB
 
 ## Environments setup
 
