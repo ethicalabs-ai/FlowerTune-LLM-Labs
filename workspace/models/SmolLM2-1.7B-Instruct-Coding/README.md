@@ -42,6 +42,28 @@ For the **HuggingFaceTB/SmolLM2-1.7B-Instruct** model we adopted the following f
   - Constant learning rate scheduler over steps
 - **Strategy**: `FedAvg`
 
+### Training Loss Visualization
+
+Below is the training loss plot from the experiment:
+
+![Training Loss](results/train_loss.png)
+
+### Evaluation Results (Pass@1 score)
+
+**PEFT Adapter**: [Flwr-SmolLM2-1.7B-Instruct-Coding-PEFT](https://huggingface.co//ethicalabs/Flwr-SmolLM2-1.7B-Instruct-Coding-PEFT)
+
+- **HumanEval**: 30.49 %
+- **MBPP**: 35.00 %
+- **MultiPL-E (C++)**: 23.60 %
+- **MultiPL-E (JS)**: 18.63 %
+- **Average**: 26.93 %
+
+The evaluation was conducted on an NVIDIA A40 (48 GB).
+
+### Communication Budget
+
+16.71 GB
+
 ## Environments setup
 
 Project dependencies are defined in `pyproject.toml`. Install them in an activated Python environment with:
