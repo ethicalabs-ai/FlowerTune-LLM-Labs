@@ -1,6 +1,6 @@
-# FlowerTune LLM Labs - Qwen/Qwen2.5-0.5B-Instruct
+# FlowerTune LLM Labs - Qwen/Qwen2.5-1.5B-Instruct
 
-This directory conducts federated instruction tuning with a pretrained [Qwen/Qwen2.5-0.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct) model on a [Code dataset](https://huggingface.co/datasets/flwrlabs/code-alpaca-20k).
+This directory conducts federated instruction tuning with a pretrained [Qwen/Qwen2.5-1.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct) model on a [Code dataset](https://huggingface.co/datasets/flwrlabs/code-alpaca-20k).
 
 We use [Flower Datasets](https://flower.dev/docs/datasets/) to download, partition and preprocess the dataset.
 
@@ -14,9 +14,9 @@ This baseline performs federated LLM fine-tuning with [DoRA](https://arxiv.org/a
 The clients' models are aggregated with `FedAvg` strategy.
 This provides a baseline performance for the leaderboard of Code challenge.
 
-### Qwen/Qwen2.5-0.5B-Instruct
+### Qwen/Qwen2.5-1.5B-Instruct
 
-For the **Qwen/Qwen2.5-0.5B-Instruct** model we adopted the following fine-tuning methodology:
+For the **Qwen/Qwen2.5-1.5B-Instruct** model we adopted the following fine-tuning methodology:
 
 - **Precision**: `bf16` for model weights.
 - **Quantization**: `4-bit` quantization for reduced memory usage.
@@ -33,8 +33,8 @@ For the **Qwen/Qwen2.5-0.5B-Instruct** model we adopted the following fine-tunin
   - Batch size: `16`
   - Maximum number of steps: `10`
   - Accumulation steps: `1`
-  - Total number of rounds: `30`
-  - Fraction fit per round: `0.6`
+  - Total number of rounds: `20`
+  - Fraction fit per round: `0.4`
 - **Learning Rate Scheduler**:
   - Cosine Annealing over rounds, where:
     - Maximum LR: `5e-6`
@@ -50,19 +50,19 @@ Below is the training loss plot from the experiment:
 
 ### Evaluation Results (Pass@1 score)
 
-**PEFT Adapter**: [Flwr-Qwen2.5-0.5B-Instruct-Coding-PEFT](https://huggingface.co/ethicalabs/Flwr-Qwen2.5-0.5B-Instruct-Coding-PEFT)
+**PEFT Adapter**: [Flwr-Qwen2.5-1.5B-Instruct-Coding-PEFT](https://huggingface.co/ethicalabs/Flwr-Qwen2.5-1.5B-Instruct-Coding-PEFT)
 
-- **HumanEval**: 22.56 %
-- **MBPP**:  20.40 %
-- **MultiPL-E (C++)**: 16.15 %
-- **MultiPL-E (JS)**: 6.83 %
-- **Average**: 16.49 %
+- **HumanEval**: 7.93 %
+- **MBPP**: 23.60 %
+- **MultiPL-E (C++)**: 26.09 %
+- **MultiPL-E (JS)**: 13.66 %
+- **Average**: 17.82 %
 
 The evaluation was conducted on an NVIDIA A40 (48 GB).
 
 ### Communication Budget
 
-3.95 GB
+3.68 GB
 
 ## Environments setup
 
@@ -78,7 +78,7 @@ pip install flash-attn --no-build-isolation   # Install FlashAttention-2
 ## Experimental setup
 
 The dataset is divided into 10 partitions in an IID fashion, a partition is assigned to each ClientApp.
-We randomly sample a fraction (0.6) of the total nodes to participate in each round, for a total of `30` rounds.
+We randomly sample a fraction (0.4) of the total nodes to participate in each round, for a total of `20` rounds.
 All settings are defined in `pyproject.toml`.
 
 > [!IMPORTANT]

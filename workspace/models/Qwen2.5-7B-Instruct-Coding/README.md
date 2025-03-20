@@ -42,6 +42,28 @@ For the **Qwen/Qwen2.5-7B-Instruct-Coding** model we adopted the following fine-
   - Constant learning rate scheduler over steps
 - **Strategy**: `FedAvg`
 
+### Training Loss Visualization
+
+Below is the training loss plot from the experiment:
+
+![Training Loss](results/train_loss.png)
+
+### Evaluation Results (Pass@1 score)
+
+**PEFT Adapter**: [Flwr-Qwen2.5-7B-Instruct-Coding-PEFT](https://huggingface.co/ethicalabs/Flwr-Qwen2.5-7B-Instruct-Coding-PEFT)
+
+- **HumanEval**: 25.00 %
+- **MBPP**: 48.00 %
+- **MultiPL-E (C++)**: 54.04 %
+- **MultiPL-E (JS)**: 10.56 %
+- **Average**: 34.40 %
+
+The evaluation was conducted on an NVIDIA A40 (48 GB).
+
+### Communication Budget
+
+2.01 GB
+
 ## Environments setup
 
 Project dependencies are defined in `pyproject.toml`. Install them in an activated Python environment with:
