@@ -1,0 +1,73 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "{{ cookiecutter.project_slug }}"
+version = "{{ cookiecutter.version }}"
+description = "{{ cookiecutter.project_short_description }}"
+license = "{{ cookiecutter.license }}"
+dependencies = [
+    "flwr[simulation]>=1.13.1",
+    "flwr-datasets>=0.3.0",
+    "torch==2.5.1",
+    "trl==0.8.1",
+    "bitsandbytes==0.45.0",
+    "scipy==1.13.0",
+    "peft==0.14.0",
+    "transformers==4.49.0",
+    "sentencepiece==0.2.0",
+    "omegaconf==2.3.0",
+    "hf_transfer==0.1.8",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[tool.flwr.app]
+publisher = "{{ cookiecutter.flower_username }}"
+
+[tool.flwr.app.components]
+serverapp = "{{ cookiecutter.project_slug }}.server_app:app"
+clientapp = "{{ cookiecutter.project_slug }}.client_app:app"
+
+[tool.flwr.app.config]
+model.name = "{{ cookiecutter.base_model }}"
+model.quantization = {{ cookiecutter.quantization }}
+model.gradient-checkpointing = true
+model.lora.peft-lora-r = {{ cookiecutter.peft_lora_r }}
+model.lora.peft-lora-alpha = {{ cookiecutter.peft_lora_alpha }}
+model.lora.peft-use-dora = {{ cookiecutter.peft_use_dora }}
+train.save-every-round = 5
+train.learning-rate-max = {{ cookiecutter.max_lr }}
+train.learning-rate-min = {{ cookiecutter.min_lr }}
+train.seq-length = 512
+train.training-arguments.output-dir = ""
+train.training-arguments.learning-rate = ""
+train.training-arguments.per-device-train-batch-size = {{ cookiecutter.per_device_train_batch_size }}
+train.training-arguments.gradient-accumulation-steps = {{ cookiecutter.accumulation_steps }}
+train.training-arguments.logging-steps = 1
+train.training-arguments.num-train-epochs = 3
+train.training-arguments.max-steps = {{ cookiecutter.max_steps }}
+train.training-arguments.save-steps = 1000
+train.training-arguments.save-total-limit = 10
+train.training-arguments.max-grad-norm = 1.0
+train.training-arguments.gradient-checkpointing = true
+train.training-arguments.bf16 = {{ cookiecutter.bf16 }}
+train.training-arguments.tf32 = {{ cookiecutter.tf32 }}
+train.training-arguments.optim = "{{ cookiecutter.optimizer }}"
+train.training-arguments.lr-scheduler-type = "{{ cookiecutter.lr_scheduler_type }}"
+strategy.fraction-fit = {{ cookiecutter.fraction_fit }}
+strategy.fraction-evaluate = 0.0
+num-server-rounds = {{ cookiecutter.num_server_rounds }}
+
+[tool.flwr.app.config.static]
+dataset.name = "flwrlabs/medical-meadow-medical-flashcards"
+
+[tool.flwr.federations]
+default = "local-simulation"
+
+[tool.flwr.federations.local-simulation]
+options.num-supernodes = 20
+options.backend.client-resources.num-cpus = {{ cookiecutter.num_cpus }}
+options.backend.client-resources.num-gpus = {{ cookiecutter.num_gpus }}
