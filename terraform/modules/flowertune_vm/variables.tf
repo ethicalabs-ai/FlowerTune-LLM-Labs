@@ -59,6 +59,12 @@ variable "boot_disk_size_gib" {
   type        = number
 }
 
+variable "startup_script" {
+  description = "Startup Script"
+  type        = string
+  default     = ""
+}
+
 variable "cudo_api_key" {
   description = "CUDO API Key"
   type        = string

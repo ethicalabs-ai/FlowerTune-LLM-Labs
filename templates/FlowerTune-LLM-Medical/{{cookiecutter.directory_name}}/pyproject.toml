@@ -15,7 +15,7 @@ dependencies = [
     "bitsandbytes==0.45.0",
     "scipy==1.13.0",
     "peft==0.14.0",
-    "transformers==4.49.0",
+    "transformers==4.51.3",
     "sentencepiece==0.2.0",
     "omegaconf==2.3.0",
     "hf_transfer==0.1.8",
@@ -62,12 +62,12 @@ strategy.fraction-evaluate = 0.0
 num-server-rounds = {{ cookiecutter.num_server_rounds }}
 
 [tool.flwr.app.config.static]
-dataset.name = "flwrlabs/code-alpaca-20k"
+dataset.name = "flwrlabs/medical-meadow-medical-flashcards"
 
 [tool.flwr.federations]
 default = "local-simulation"
 
 [tool.flwr.federations.local-simulation]
-options.num-supernodes = 10
+options.num-supernodes = 20
 options.backend.client-resources.num-cpus = {{ cookiecutter.num_cpus }}
 options.backend.client-resources.num-gpus = {{ cookiecutter.num_gpus }}

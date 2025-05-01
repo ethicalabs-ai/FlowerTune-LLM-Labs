@@ -12,5 +12,5 @@ resource "cudo_vm" "flowertune_vm" {
     image_id = var.boot_disk_image_id
     size_gib = var.boot_disk_size_gib
   }
-  start_script = templatefile("${path.module}/start_script.sh", {})
+  start_script = templatefile(local.startup_script, {})
 }
