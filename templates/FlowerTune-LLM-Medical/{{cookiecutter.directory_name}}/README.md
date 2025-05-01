@@ -1,6 +1,6 @@
 # {{ cookiecutter.project_short_description }} - {{ cookiecutter.base_model }}
 
-This directory conducts federated instruction tuning with a pretrained [{{ cookiecutter.base_model }}](https://huggingface.co/{{ cookiecutter.base_model }}) model on a [Code dataset](https://huggingface.co/datasets/flwrlabs/code-alpaca-20k).
+This directory conducts federated instruction tuning with a pretrained [{{ cookiecutter.base_model }}](https://huggingface.co/{{ cookiecutter.base_model }}) model on a [Medical dataset](https://huggingface.co/datasets/flwrlabs/medical-meadow-medical-flashcards).
 
 We use [Flower Datasets](https://flower.dev/docs/datasets/) to download, partition and preprocess the dataset.
 
@@ -12,7 +12,7 @@ which allows users to perform the training on a single GPU.
 
 This baseline performs federated LLM fine-tuning with {% if cookiecutter.peft_use_dora is sameas "true" %}[DoRA](https://arxiv.org/abs/2402.09353){% else %}[LoRA](https://arxiv.org/abs/2106.09685){% endif %} using the [🤗PEFT](https://huggingface.co/docs/peft/en/index) library.
 The clients' models are aggregated with `FedAvg` strategy.
-This provides a baseline performance for the leaderboard of Code challenge.
+This provides a baseline performance for the leaderboard of Medical challenge.
 
 ### {{ cookiecutter.base_model }}
 
@@ -76,7 +76,7 @@ flwr run
 
 To evaluate the fine-tuned LLM adapter, please check the following link:
 
--  [Evaluation for Code challenge](https://github.com/adap/flower/tree/main/benchmarks/flowertune-llm/evaluation/code)
+-  [Evaluation for Medical challenge](https://github.com/adap/flower/tree/main/benchmarks/flowertune-llm/evaluation/medical)
 
 ## Model saving
 
