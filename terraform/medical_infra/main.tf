@@ -23,6 +23,7 @@ module "llm_experiment" {
   boot_disk_image_id = "ubuntu-2204-nvidia-535-docker-v20241017"
   boot_disk_size_gib = 70
   ssh_key_source     = "user"
+  startup_script     = "${path.module}/start_script.sh"
 }
 
 output "external_ip_address" {
