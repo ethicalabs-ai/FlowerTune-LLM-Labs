@@ -44,6 +44,28 @@ For the **Qwen/Qwen3-0.6B-Base** model we adopted the following fine-tuning meth
   - Constant learning rate scheduler over steps
 - **Strategy**: `FedAvg`
 
+### Training Loss Visualization
+
+Below is the training loss plot from the experiment:
+
+![Training Loss](results/train_loss.png)
+
+### Evaluation Results (Pass@1 score)
+
+**PEFT Adapter**: [Flwr-Qwen3-0.6B-Medical-PEFT](https://huggingface.co/ethicalabs/Flwr-Qwen3-0.6B-Medical-PEFT)
+
+- **CareQA**: 26.86 %
+- **MedmcQA**: 20.13 %
+- **MedQA**: 20.35 %
+- **PubMedQA**: 20.40 %
+- **Average**: 21.94 %
+
+The evaluation was conducted on an NVIDIA RTX A5000 (24 GB).
+
+### Communication Budget
+
+8.25 GB
+
 ## Environments setup
 
 Project dependencies are defined in `pyproject.toml`. Install them in an activated Python environment with:
@@ -58,7 +80,7 @@ pip install flash-attn --no-build-isolation   # Install FlashAttention-2
 ## Experimental setup
 
 The dataset is divided into 20 partitions in an IID fashion, a partition is assigned to each ClientApp.
-We randomly sample a fraction (0.2) of the total nodes to participate in each round, for a total of `10` rounds.
+We randomly sample a fraction (0.2) of the total nodes to participate in each round, for a total of `50` rounds.
 All settings are defined in `pyproject.toml`.
 
 > [!IMPORTANT]

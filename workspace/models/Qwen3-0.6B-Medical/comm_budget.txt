@@ -1,0 +1,7 @@
+INFO :      aggregate_fit: received 4 results and 0 failures
+INFO :      Communication budget: used 8253.71 MB (+82.54 MB this round) / 200,000 MB
+INFO :      fit progress: (50, 0.0, {}, 2215.667793925)
+INFO :      configure_evaluate: no clients selected, skipping evaluation
+INFO :
+INFO :      [SUMMARY]
+INFO :      Run finished 50 round(s) in 2215.67s
