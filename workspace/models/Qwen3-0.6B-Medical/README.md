@@ -50,7 +50,7 @@ Below is the training loss plot from the experiment:
 
 ![Training Loss](results/train_loss.png)
 
-### Evaluation Results (Pass@1 score)
+### Evaluation Results (Accuracy)
 
 **PEFT Adapter**: [Flwr-Qwen3-0.6B-Medical-PEFT](https://huggingface.co/ethicalabs/Flwr-Qwen3-0.6B-Medical-PEFT)
 
