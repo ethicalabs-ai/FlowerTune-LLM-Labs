@@ -23,4 +23,4 @@ The goal is to evaluate LLMs on different domains of tasks, experiment with diff
 
 | Model                                | Adapter                                  | Average Accuracy | CareQA Accuracy | MedmcQA Accuracy | MedQA Accuracy | PubMedQA Accuracy | Fraction-Fit | Server Rounds | Comm Budget Used (GB) | Date       |
 |--------------------------------------|--------------------------------|----------------|------------------|-------------|---------------------|--------------------|--------------|---------------|-----------------------|------------|
-| [Qwen/Qwen3-0.6B](Qwen3-0.6B-Medical)          | [Flwr-Qwen3-0.6B-Medical-PEFT](https://huggingface.co/ethicalabs/Flwr-Qwen3-0.6B-Medical-PEFT)   | 21.94 %         | 20.13 %           | 20.35 %      | 20.40 %              | 0.2          | 50            | 8.25                  | 04/05/2025 |
+| [Qwen/Qwen3-0.6B](Qwen3-0.6B-Medical)          | [Flwr-Qwen3-0.6B-Medical-PEFT](https://huggingface.co/ethicalabs/Flwr-Qwen3-0.6B-Medical-PEFT)   | 21.94 %         | 26.86 %           | 20.13 %      | 20.35 %              | 20.40 %          | 0.2            | 50                  | 8.25         | 04/05/2025        |
