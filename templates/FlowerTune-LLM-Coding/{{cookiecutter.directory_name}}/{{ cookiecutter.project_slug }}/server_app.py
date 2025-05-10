@@ -10,7 +10,7 @@ from omegaconf import DictConfig
 
 from .models import get_model, get_parameters, set_parameters
 from .dataset import replace_keys
-from .strategy import FlowerTuneLlm
+from .strategy import FlowerTuneLlm, FlowerTuneLlmFlexLoRA
 
 
 # Get function that will be executed by the strategy's evaluate() method
@@ -75,7 +75,13 @@ def server_fn(context: Context):
     init_model_parameters = ndarrays_to_parameters(init_model_parameters)
 
     # Define strategy
-    strategy = FlowerTuneLlm(
+    if context.run_config.get("use-flexlora", False):
+        print("Using FlexLoRA for Aggregation")
+        # Define strategy
+        strategy_cls = FlowerTuneLlmFlexLoRA
+    else:
+        strategy_cls = FlowerTuneLlm
+    strategy = strategy_cls(
         fraction_fit=cfg.strategy.fraction_fit,
         fraction_evaluate=cfg.strategy.fraction_evaluate,
         on_fit_config_fn=get_on_fit_config(save_path),
@@ -86,7 +92,6 @@ def server_fn(context: Context):
         ),
     )
     config = ServerConfig(num_rounds=num_rounds)
-
     return ServerAppComponents(strategy=strategy, config=config)
 
 
