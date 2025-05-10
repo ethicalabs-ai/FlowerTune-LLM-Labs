@@ -80,7 +80,7 @@ pip install flash-attn --no-build-isolation   # Install FlashAttention-2
 ## Experimental setup
 
 The dataset is divided into 10 partitions in an IID fashion, a partition is assigned to each ClientApp.
-We randomly sample a fraction (0.2) of the total nodes to participate in each round, for a total of `20` rounds.
+We randomly sample a fraction (0.2) of the total nodes to participate in each round, for a total of `10` rounds.
 All settings are defined in `pyproject.toml`.
 
 > [!IMPORTANT]
