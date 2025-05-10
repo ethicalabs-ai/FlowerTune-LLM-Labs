@@ -1,6 +1,6 @@
-# FlowerTune LLM Labs - Qwen/Qwen3-4B-Coding
+# FlowerTune LLM Labs - Qwen/Qwen3-8B
 
-This directory conducts federated instruction tuning with a pretrained [Qwen/Qwen3-4B](https://huggingface.co/Qwen/Qwen3-4B) model on a [Code dataset](https://huggingface.co/datasets/flwrlabs/code-alpaca-20k).
+This directory conducts federated instruction tuning with a pretrained [Qwen/Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B) model on a [Code dataset](https://huggingface.co/datasets/flwrlabs/code-alpaca-20k).
 
 We use [Flower Datasets](https://flower.dev/docs/datasets/) to download, partition and preprocess the dataset.
 
@@ -14,9 +14,9 @@ This baseline performs federated LLM fine-tuning with [DoRA](https://arxiv.org/a
 The clients' models are aggregated with `FedAvg` strategy.
 This provides a baseline performance for the leaderboard of Code challenge.
 
-### Qwen/Qwen3-4B
+### Qwen/Qwen3-8B
 
-For the **Qwen/Qwen3-4B** model we adopted the following fine-tuning methodology:
+For the **Qwen/Qwen3-8B** model we adopted the following fine-tuning methodology:
 
 - **Precision**: `bf16` for model weights.
 - **Quantization**: `4-bit` quantization for reduced memory usage.
@@ -35,7 +35,7 @@ For the **Qwen/Qwen3-4B** model we adopted the following fine-tuning methodology
   - Batch size: `8`
   - Maximum number of steps: `10`
   - Accumulation steps: `1`
-  - Total number of rounds: `20`
+  - Total number of rounds: `10`
   - Fraction fit per round: `0.2`
 - **Learning Rate Scheduler**:
   - Cosine Annealing over rounds, where:
@@ -52,20 +52,19 @@ Below is the training loss plot from the experiment:
 
 ### Evaluation Results (Pass@1 score)
 
-**PEFT Adapter**: [Flwr-Qwen3-4B-Coding-PEFT](https://huggingface.co/ethicalabs/Flwr-Qwen3-4B-Coding-PEFT)
+**PEFT Adapter**: [Flwr-Qwen3-8B-Coding-PEFT](https://huggingface.co/ethicalabs/Flwr-Qwen3-8B-Coding-PEFT)
 
-- **HumanEval**: 64.63 %
+- **HumanEval**: n/a %
 - **MBPP**: n/a %
-- **MultiPL-E (C++)**: 60.87 %
-- **MultiPL-E (JS)**: 61.49 %
+- **MultiPL-E (C++)**: n/a %
+- **MultiPL-E (JS)**: n/a %
 - **Average**: n/a %
 
 The evaluation was conducted on an NVIDIA A40 (48 GB).
 
 ### Communication Budget
 
-5.38 GB
-
+3.54 GB
 
 ## Environments setup
 
