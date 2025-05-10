@@ -55,10 +55,10 @@ Below is the training loss plot from the experiment:
 **PEFT Adapter**: [Flwr-Qwen3-4B-Coding-PEFT](https://huggingface.co/ethicalabs/Flwr-Qwen3-4B-Coding-PEFT)
 
 - **HumanEval**: 64.63 %
-- **MBPP**: n/a %
+- **MBPP**: 54.8 %
 - **MultiPL-E (C++)**: 60.87 %
 - **MultiPL-E (JS)**: 61.49 %
-- **Average**: n/a %
+- **Average**: 60.45 %
 
 The evaluation was conducted on an NVIDIA A40 (48 GB).
 
