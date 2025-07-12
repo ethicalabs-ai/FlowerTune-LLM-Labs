@@ -42,7 +42,7 @@ For the **Qwen/Qwen3-4B** model we adopted the following fine-tuning methodology
     - Maximum LR: `5e-6`
     - Minimum LR: `5e-5`
   - Constant learning rate scheduler over steps
-- **Strategy**: `FedAvg`
+- **Strategy**: `FedAvg` and `FlexLora`
 
 ### Training Loss Visualization
 
@@ -59,6 +59,24 @@ Below is the training loss plot from the experiment:
 - **MultiPL-E (C++)**: 60.87 %
 - **MultiPL-E (JS)**: 61.49 %
 - **Average**: 60.45 %
+
+The evaluation was conducted on an NVIDIA A40 (48 GB).
+
+### Evaluation Results (FlexLora, Pass@1 score)
+
+**PEFT Adapter**: [Flwr-Qwen3-4B-Coding-PEFT](https://huggingface.co/ethicalabs/Flwr-Qwen3-4B-Coding-PEFT)
+
+- **HumanEval**:  %
+- **MBPP**: %
+- **MultiPL-E (C++)**: %
+- **MultiPL-E (JS)**: %
+- **Average**: %
+
+FlexLora aggregation strategy has been defined in `pyproject.toml`
+
+```
+use-flexlora = true
+```
 
 The evaluation was conducted on an NVIDIA A40 (48 GB).
 

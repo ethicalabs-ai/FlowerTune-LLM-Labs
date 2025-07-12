@@ -60,7 +60,7 @@ train.training-arguments.lr-scheduler-type = "constant"
 strategy.fraction-fit = 0.2
 strategy.fraction-evaluate = 0.0
 num-server-rounds = 20
-use-flexlora = false
+use-flexlora = true
 
 [tool.flwr.app.config.static]
 dataset.name = "flwrlabs/code-alpaca-20k"
