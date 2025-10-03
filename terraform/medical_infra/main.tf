@@ -30,6 +30,3 @@ output "external_ip_address" {
   value = module.llm_experiment.external_ip_address
 }
 
-output "renewable_energy" {
-  value = module.llm_experiment.renewable_energy
-}
